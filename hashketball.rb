@@ -216,6 +216,22 @@ def most_points_scored
   return most_points[:player_name]
 end
 
+def team_score(team_name)
+  team_points = {:team_name => "#{team_name}", :points => 0} 
+  game_hash.each do |teams, data|
+    if data[:team_name] == team_name 
+      data.each do |data, value|
+        if data == :players
+          value.each do |player|
+            team_points[:points] += player[:points]
+          end 
+        end 
+      end 
+    end 
+  end 
+  team_points
+end 
+
 def winning_team
   home = team_score("Brooklyn Nets")
   away = team_score("Charlotte Hornets")
