@@ -243,7 +243,20 @@ def winning_team
 end 
 
 def player_with_longest_name
-  
+  long_name = {:player_name => ""} # establish var to hold an empty string for current length of the longest name which is 0 
+  game_hash.each do |teams, data|
+    data.each do |team_data, value|
+      if team_data == :players 
+        value.each do |player|
+          if player[:player_name].length > long_name[:player_name].length 
+            long_name = player 
+          end 
+        end 
+      end 
+    end 
+  end 
+  return long_name[:player_name]
+end 
 end   
 #create a method that returns the most points awarded to a player 
 
