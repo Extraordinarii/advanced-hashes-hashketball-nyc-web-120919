@@ -257,7 +257,6 @@ def player_with_longest_name
   end 
   return long_name[:player_name]
 end 
-end   
 #create a method that returns the most points awarded to a player 
 
 #go through teams, then the team data 
