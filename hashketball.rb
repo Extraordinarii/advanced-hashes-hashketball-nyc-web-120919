@@ -271,7 +271,11 @@ def long_name_steals_a_ton?
   end 
 end 
 end 
-steal_count[:player_name]
+    if steal_count[:player_name] == player_with_longest_name
+      return true 
+    else 
+      false 
+    end 
 end 
 
 
