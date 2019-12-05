@@ -264,7 +264,7 @@ def long_name_steals_a_ton?
   data.each do |team_data, value| #now we go through each player and their steal count 
   if team_data == :players 
     value.each do |player|
-      if player[:steal] > steal_count
+      if player[:steal] > steal_count[:steals]
         steal_count = player 
       end 
     end 
