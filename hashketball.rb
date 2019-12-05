@@ -257,6 +257,24 @@ def player_with_longest_name
   end 
   return long_name[:player_name]
 end 
+
+def long_name_steals_a_ton
+  steal_count = {:steals => 0}
+  game_hash.each do |teams, data| #we go through the both teams 
+  data.each do |team_data, value| #now we go through each player and their steal count 
+  if team_data == :players 
+    value.each do |player|
+      if player[:steal] > steal_count
+        steal_count = player 
+      end 
+    end 
+  end 
+end 
+end 
+steal_count[:player_name]
+end 
+
+
 #create a method that returns the most points awarded to a player 
 
 #go through teams, then the team data 
