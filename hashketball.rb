@@ -216,6 +216,15 @@ def most_points_scored
   return most_points[:player_name]
 end
 
+def winning_team
+  home = team_score("Brooklyn Nets")
+  away = team_score("Charlotte Hornets")
+  if home[:points] > away[:points]
+    return home[:team_name]
+  else 
+    return away[:team_name]
+  end 
+end 
 
 #create a method that returns the most points awarded to a player 
 
