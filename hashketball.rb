@@ -258,7 +258,7 @@ def player_with_longest_name
   return long_name[:player_name]
 end 
 
-def long_name_steals_a_ton
+def long_name_steals_a_ton?
   steal_count = {:steals => 0}
   game_hash.each do |teams, data| #we go through the both teams 
   data.each do |team_data, value| #now we go through each player and their steal count 
